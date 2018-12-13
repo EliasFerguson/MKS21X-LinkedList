@@ -5,7 +5,7 @@ class Node {
    data = num;
  }
  private Node next() {
-
+   return next;
  }
  private Node prev() {
 
