@@ -11,7 +11,7 @@ class Node {
    return prev;
  }
  private void setNext(Node other) {
-
+   next = other;
  }
  private void setPrev(Node other) {
 
