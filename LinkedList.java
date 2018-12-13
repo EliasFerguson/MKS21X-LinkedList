@@ -8,9 +8,15 @@ class MyLinkedList {
    return size;
  }
  public boolean add(int value) {
-   end = new Node(value);
-   size++;
-   return true;
+   if (size == 0) {
+     start = new Node(value);
+     end = start;
+   }
+   else {
+    end = new Node(value);
+    size++;
+  }
+  return true;
  }
  public String toString() {
    return "help me";
