@@ -1,9 +1,8 @@
 class MyLinkedList {
  private int size;
  private Node start,end;
- public MyLinkedList (int num) {
-   start = new Node(num);
-   size++;
+ public MyLinkedList() {
+   size = 0;
  }
  public int size() {
    return size;
@@ -14,6 +13,6 @@ class MyLinkedList {
    return true;
  }
  public String toString() {
-   return "help";
+   return "help me";
  }
 }
