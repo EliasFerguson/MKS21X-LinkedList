@@ -14,7 +14,7 @@ class Node {
    next = other;
  }
  private void setPrev(Node other) {
-
+   prev = other;
  }
  public Integer getData() {
 
