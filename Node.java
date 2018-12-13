@@ -20,9 +20,11 @@ class Node {
    return data;
  }
  public Integer setData(Integer i) {
-   data = i;
+  Integer old = data;
+  data = i;
+  return old;
  }
  public String toString() {
-
+   return "" + getData();
  }
 }
