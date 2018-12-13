@@ -8,7 +8,7 @@ class Node {
    return next;
  }
  private Node prev() {
-
+   return prev;
  }
  private void setNext(Node other) {
 
