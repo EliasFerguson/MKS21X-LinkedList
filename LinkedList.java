@@ -9,9 +9,11 @@ class MyLinkedList {
    return size;
  }
  public boolean add(int value) {
-
+   end = new Node(value);
+   size++;
+   return true;
  }
  public String toString() {
-
+   return "help";
  }
 }
