@@ -20,7 +20,7 @@ class Node {
    return data;
  }
  public Integer setData(Integer i) {
-
+   data = i;
  }
  public String toString() {
 
