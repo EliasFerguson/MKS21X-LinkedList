@@ -37,8 +37,14 @@ class MyLinkedList {
     return current.getData();
   }
   public Integer set(int index, Integer value) {
-
-  }
+    int counter = 0;
+    Node current = start;
+    while (index != counter) {
+      current = current.next();
+      counter++;
+    }
+    return current.setData(value);
+   }
   public boolean contains(Integer value) {
 
   }
