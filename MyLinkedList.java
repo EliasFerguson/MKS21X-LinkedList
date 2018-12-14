@@ -24,12 +24,17 @@ class MyLinkedList {
    while (current != null) {
      output += current.toString() + ", ";
      current = current.next();
-
    }
    return output + "]";
   }
   public Integer get(int index) {
-
+    int counter = 0;
+    Node current = start;
+    while (index != counter) {
+      current = current.next();
+      counter++;
+    }
+    return current.getData();
   }
   public Integer set(int index, Integer value) {
 
@@ -49,8 +54,8 @@ class MyLinkedList {
   public boolean remove(Integer value) {
 
   }
-  private findNode(int index) {
-    
+  private Node findNode(int index) {
+
   }
   private class Node {
    private int data;
