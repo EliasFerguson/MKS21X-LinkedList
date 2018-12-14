@@ -48,7 +48,7 @@ class MyLinkedList {
   public boolean contains(Integer value) {
     Node current = start;
     while (current != null) {
-      if (current.getData() = value) {
+      if (current.getData() == value) {
         return true;
       }
       else {
@@ -58,7 +58,18 @@ class MyLinkedList {
     return false;
   }
   public int indexOf(Integer value) {
-
+    Node current = start;
+    int counter = 0;
+    while (current != null) {
+      if (current.getData() == value) {
+        return counter;
+      }
+      else {
+        current = current.next();
+        counter++;
+      }
+    }
+    return -1;
   }
   public void add(int index, Integer value) {
 
