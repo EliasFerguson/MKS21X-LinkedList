@@ -25,13 +25,18 @@ public class MyLinkedList {
   return true;
  }
  public String toString() {
+   int counter = 0;
    Node current = start;
    String output = "[";
-   while (current != null) {
+   if (size == 0) {
+     return "[]";
+   }
+   while (counter < size - 1) {
      output += current.toString() + ", ";
      current = current.next();
+     counter++;
    }
-   return output + "]";
+   return output + current.toString() + "]";
   }
   public Integer get(int index) {
     if (index < 0 || index >= size) {
