@@ -3,19 +3,24 @@ public class MyLinkedList {
  private Node start,end;
  public MyLinkedList() {
    size = 0;
+   start = null;
+   end = null;
  }
  public int size() {
    return size;
  }
  public boolean add(Integer value) {
    if (size == 0) {
-     start = new Node(value);
-     end = start;
+     Node adder = new Node(value, null, null);
+     end = adder;
+     start = adder;
    }
    else {
-    end = new Node(value);
-    size++;
+     Node adder = new Node(value, end, null);
+     end = adder;
+     adder.prev().setNext(adder);
   }
+  size++;
   return true;
  }
  public String toString() {
@@ -81,7 +86,27 @@ public class MyLinkedList {
     if (index < 0 || index >= size) {
       throw new IndexOutOfBoundsException();
     }
-
+    if (index == (size - 1)) {
+      add(value);
+    }
+    else if (index == 0) {
+      Node adder = new Node(value, null, start);
+      start = adder;
+      adder.next().setPrev(adder);
+      size++;
+    }
+    else {
+      int counter = 0;
+      Node current = start;
+      while (counter != index) {
+        current = current.next();
+        counter++;
+      }
+      Node adder = new Node(value, current.prev(), current);
+      adder.prev().setNext(adder);
+      adder.next().setPrev(adder);
+      size++;
+    }
   }
   public Integer remove(int index) {
     if (index < 0 || index >= size) {
@@ -105,8 +130,10 @@ public class MyLinkedList {
   private class Node {
    private int data;
    private Node next,prev;
-   private Node(int num) {
+   private Node(int num, Node nNext, Node nPrev) {
      data = num;
+     next = nNext;
+     prev = nPrev;
    }
    private Node next() {
      return next;
