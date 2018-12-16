@@ -28,6 +28,9 @@ public class MyLinkedList {
    return output + "]";
   }
   public Integer get(int index) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
     int counter = 0;
     Node current = start;
     while (index != counter) {
@@ -37,6 +40,9 @@ public class MyLinkedList {
     return current.getData();
   }
   public Integer set(int index, Integer value) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
     int counter = 0;
     Node current = start;
     while (index != counter) {
@@ -72,15 +78,24 @@ public class MyLinkedList {
     return -1;
   }
   public void add(int index, Integer value) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
 
   }
   public Integer remove(int index) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
 
   }
   public boolean remove(Integer value) {
 
   }
   private Node findNode(int index) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
     Node current = start;
     for (int i = 0; i < index; i++) {
       current = current.next();
