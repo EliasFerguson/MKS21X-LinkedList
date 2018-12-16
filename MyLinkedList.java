@@ -89,10 +89,10 @@ public class MyLinkedList {
     return -1;
   }
   public void add(int index, Integer value) {
-    if (index < 0 || index >= size) {
+    if (index < 0 || index > size) {
       throw new IndexOutOfBoundsException();
     }
-    if (index == (size - 1)) {
+    if (index == size) {
       add(value);
     }
     else if (index == 0) {
@@ -141,24 +141,23 @@ public class MyLinkedList {
     return returner;
   }
   public boolean remove(Integer value) {
-    int index = indexOf(value);
-    if (index == -1) {
+    Node current = start;
+    int counter = 0;
+    boolean needsFinding = true;
+    while (needsFinding && current != null) {
+      if (current.getData().equals(value)) {
+        needsFinding = false;
+      }
+      else {
+        current = current.next();
+        counter++;
+      }
+    }
+    if (needsFinding) {
       return false;
     }
-    else {
-      remove(index);
-    }
+    remove(counter);
     return true;
-  }
-  private Node findNode(int index) {
-    if (index < 0 || index >= size) {
-      throw new IndexOutOfBoundsException();
-    }
-    Node current = start;
-    for (int i = 0; i < index; i++) {
-      current = current.next();
-    }
-    return current;
   }
   private class Node {
    private int data;
@@ -191,5 +190,24 @@ public class MyLinkedList {
    public String toString() {
      return "" + getData();
    }
+  }
+  public static void main(String[] args) {
+    MyLinkedList test = new MyLinkedList();
+    test.add(5);
+    test.add(4);
+    test.add(3);
+    test.add(2);
+    test.add(1);
+    System.out.println(test.toString());
+    test.add(0, 6);
+    test.add(5, 0);
+    test.add(3, 1000);
+    System.out.println(test.toString());
+    test.remove(0);
+    test.remove(6);
+    System.out.println(test.toString());
+    Integer remover = new Integer(1000);
+    test.remove(remover);
+    System.out.println(test.toString());
   }
 }
