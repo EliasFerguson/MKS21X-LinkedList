@@ -128,6 +128,10 @@ public class MyLinkedList {
       current.prev().setNext(null);
       return current.get(index);
     }
+    else {
+      current.next().setPrev(current.prev());
+      current.prev().setNext(current.next());
+    }
   }
   public boolean remove(Integer value) {
 
