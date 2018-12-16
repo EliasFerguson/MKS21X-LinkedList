@@ -135,7 +135,14 @@ public class MyLinkedList {
     return returner;
   }
   public boolean remove(Integer value) {
-
+    int index = indexOf(value);
+    if (index == -1) {
+      return false;
+    }
+    else {
+      remove(index);
+    }
+    return true;
   }
   private Node findNode(int index) {
     if (index < 0 || index >= size) {
