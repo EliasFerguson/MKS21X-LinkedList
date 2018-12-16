@@ -121,6 +121,12 @@ public class MyLinkedList {
     if (index == 0) {
       start = current.next();
       current.next().setPrev(null);
+      return current.get(index);
+    }
+    else if (index == size - 1) {
+      end = current.prev();
+      current.prev().setNext(null);
+      return current.get(index);
     }
   }
   public boolean remove(Integer value) {
