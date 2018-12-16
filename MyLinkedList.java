@@ -112,7 +112,13 @@ public class MyLinkedList {
     if (index < 0 || index >= size) {
       throw new IndexOutOfBoundsException();
     }
-
+    Node current = start;
+    int counter = 0;
+    while (counter != index) {
+      counter++;
+      current = current.next();
+    }
+    
   }
   public boolean remove(Integer value) {
 
