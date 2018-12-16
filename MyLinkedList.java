@@ -1,4 +1,4 @@
-class MyLinkedList {
+public class MyLinkedList {
  private int size;
  private Node start,end;
  public MyLinkedList() {
@@ -81,7 +81,11 @@ class MyLinkedList {
 
   }
   private Node findNode(int index) {
-
+    Node current = start;
+    for (int i = 0; i < index; i++) {
+      current = current.next();
+    }
+    return current;
   }
   private class Node {
    private int data;
