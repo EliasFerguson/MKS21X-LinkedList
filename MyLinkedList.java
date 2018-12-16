@@ -118,7 +118,10 @@ public class MyLinkedList {
       counter++;
       current = current.next();
     }
-    
+    if (index == 0) {
+      start = current.next();
+      current.next().setPrev(null);
+    }
   }
   public boolean remove(Integer value) {
 
