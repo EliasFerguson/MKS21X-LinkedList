@@ -1,3 +1,4 @@
+import java.util.*;
 public class MyLinkedList {
  private int size;
  private Node start,end;
@@ -157,7 +158,7 @@ public class MyLinkedList {
   private class Node {
    private int data;
    private Node next,prev;
-   private Node(int num, Node nNext, Node nPrev) {
+   private Node(int num, Node nPrev, Node nNext) {
      data = num;
      next = nNext;
      prev = nPrev;
