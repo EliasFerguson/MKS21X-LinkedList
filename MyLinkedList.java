@@ -159,6 +159,19 @@ public class MyLinkedList {
     remove(counter);
     return true;
   }
+  public void extend(MyLinkedList other) {
+    Node otherStart = other.start;
+    Node otherEnd = other.end;
+    end.setNext(otherStart);
+    otherStart.setPrev(end);
+    end = otherEnd;
+    size += other.size();
+    MyLinkedList spare = new MyLinkedList();
+    other.start = spare.start;
+    other.end = spare.end;
+    other.size = spare.size;
+
+  }
   private class Node {
    private int data;
    private Node next,prev;
